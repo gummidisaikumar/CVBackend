@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const Profile = require('../models/profile');
 const checkAuth = require('../middleware/check_auth');
 
-router.get('/', checkAuth, (req, res, next)=>{
+router.get('/', (req, res, next)=>{
   Profile.find()
   .exec()
   .then(result => {

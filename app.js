@@ -4,17 +4,17 @@ const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-var favicon = require('serve-favicon')
+// var favicon = require('serve-favicon')
 const profileRoutes = require('./api/routes/profile');
 const userRoutes = require('./api/routes/user');
 
-mongoose.connect('mongodb+srv://gummidi78:'+ process.env.MONGO_ATLAS_PW +'@gummidi-wk21w.mongodb.net/test?retryWrites=true', {
+mongoose.connect('mongodb+srv://gummidi78:mongoDB@123@gummidi-wk21w.mongodb.net/test?retryWrites=true', {
     useNewUrlParser: true,
     useCreateIndex: true,
 });
 
 app.use(morgan('dev'));
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
+// app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use((req, res, next) => {
